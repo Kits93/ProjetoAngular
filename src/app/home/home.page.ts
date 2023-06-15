@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -7,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule],
+  imports: [IonicModule, CommonModule, RouterLink],
 })
 export class HomePage {
   perfil = {
@@ -228,4 +229,14 @@ export class HomePage {
         }
       }    
   ]
+
+  seguir_status: string = 'Seguir';
+
+  setSeguir(){
+    if (this.seguir_status == 'Seguir'){
+    this.seguir_status = 'Seguindo';
+    }else{
+      this.seguir_status = 'Seguir';
+      }
+  }
 }
