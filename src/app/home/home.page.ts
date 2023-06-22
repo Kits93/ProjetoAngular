@@ -8,6 +8,22 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule],
 })
+
 export class HomePage {
-  constructor() {}
+  resultado: number = 0;
+  operacao: string = '';
+
+  adicionar(num:string) {
+    this.operacao += num;
+  }
+
+  limparTela() {
+    this.resultado = 0;
+    this.operacao = '';
+  }
+
+  resultadoOperacao() {
+    this.resultado = (eval(this.operacao.toString()));
+    console.log(this.resultado);
+  }
 }
